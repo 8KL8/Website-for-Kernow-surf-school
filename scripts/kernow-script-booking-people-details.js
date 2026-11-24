@@ -1,3 +1,4 @@
+// This gives the maximum and minimum number of people that can book for once session
 function updatePeople() {
 
     // Get the IDs of selected session box & People box
@@ -34,4 +35,34 @@ function updatePeople() {
         people.value = "";
         people.disabled = true;
     }
+}
+
+// The reciept shown once the options have been selected
+function reciept() {
+
+    // Get the IDs of selected session box & People box
+    const session = document.getElementById("session").value;
+    const people = document.getElementById("people");
+    const name = document.getElementById("name").value;
+    
+    const message = `Thank you ${name}!`;
+    const discount = 0.9;
+
+    const reciept = "";
+    const cost = 0;
+    const price = {
+        group: { cost : 35 },
+        private: { cost : 65  },
+        family: { cost : 30 },
+    }
+
+    if (session === "group" || session === "family") {
+        if (people >= 5) {
+            message = ` 10% ${session} discount.`;
+            price = 35 * discount
+        }
+    } else if (session === private ) {
+        a
+    }
+
 }
